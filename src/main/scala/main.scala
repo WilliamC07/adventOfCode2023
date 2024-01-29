@@ -1,3 +1,4 @@
 @main def main(): Unit = {
-  println("Hello world!")
+//  day1.part1()
+  day1.part2()
 }
