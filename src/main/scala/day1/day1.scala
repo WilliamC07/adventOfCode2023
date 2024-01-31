@@ -68,8 +68,8 @@ def part2(): Unit = {
   var sum: Int = 0
 
   for line <- file.getLines() do
-    val n = Seq.range(0, line.length).map(i => parseOut(line, i)).collectFirst({case Some(x) => x}).get * 10
-    + Seq.range(line.length-1, -1, -1).map(i => parseOut(line, i)).collectFirst({case Some(x) => x}).get
+    val n = (0 until line.length).map(parseOut(line, _)).collectFirst({case Some(x) => x}).get * 10
+    + (line.length - 1 until -1 by -1).map(parseOut(line, _)).collectFirst({case Some(x) => x}).get
     sum += n
 
   println(s"part 2: $sum") // 54076
